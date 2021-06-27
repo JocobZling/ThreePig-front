@@ -19,11 +19,11 @@ export const actions = {
         return dispatch => {
             (async () => {
                 dispatch(appActions.startFetch());
-                const res = await request.postWithBody('./user/registOrLogin', data);
+                const res = await request.postWithBody('./api/users/login', data);
+                debugger;
                 if (res.status === HTTP_CODE.OK) {
-                    window.localStorage.setItem("jwt", res.body.data.jwtToken);
-                    window.localStorage.setItem("id", res.body.data.id);
-                    window.localStorage.setItem("userName", res.body.data.username);
+                    window.localStorage.setItem("jwt", res.body.token);
+                    window.localStorage.setItem("id", res.body.user.id);
                     message.success("登录成功！");
                     window.location.href = '/';
                     dispatch(appActions.finishFetch());
@@ -36,9 +36,10 @@ export const actions = {
             (async () => {
                 dispatch(appActions.startFetch());
                 debugger;
-                const res = await request.postWithBody('./user/registOrLogin', data);
+                const res = await request.postWithBody('./api/users/register', data);
                 if (res.status === HTTP_CODE.OK) {
                     message.success("注册成功！");
+                    window.location.href = '/#/login';
                     dispatch(appActions.finishFetch());
                 }
             })();

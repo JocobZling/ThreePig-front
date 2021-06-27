@@ -2,6 +2,7 @@
   "name": "face-front",
   "version": "1.0.0",
   "dependencies": {
+    "element-ui": "^2.15.2",
     "@ant-design/icons": "^4.3.0",
     "antd": "^4.6.6",
     "moment": "^2.29.0",
