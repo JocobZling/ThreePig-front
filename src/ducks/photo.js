@@ -22,12 +22,28 @@ export const actions = {
             })();
         }
     },
+    getEveryTimesAllPhoto: (date, userId) => {
+        return dispatch => {
+            (async () => {
+                dispatch(appActions.startFetch());
+                const res = await request.get(`./day/${date}/all/${userId}`);
+                if (res.status === HTTP_CODE.OK) {
+                    dispatch(actions.setIndexPhotoList(res.body))
+                    dispatch(appActions.finishFetch());
+                }
+            })();
+        }
+    },
     setIndexPhotoList: (indexPhotoList) => {
         return {
             type: types.GET_INDEX_PHOTO_LIST,
             indexPhotoList: indexPhotoList
         }
     },
+    setEveryTimesAllPhoto:()=>{
+        return {
+        }
+    }
 }
 const initialState = {
     indexPhotoList: [{
