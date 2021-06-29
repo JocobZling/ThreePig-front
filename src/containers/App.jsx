@@ -7,6 +7,7 @@ import UserProfileContainer from "./UserProfile";
 import HomePageContainer from "./photo/HomePageContainer";
 import UploadPhotoContainer from "./photo/UploadPhotoContainer";
 import EveryTimesPhotoDisplayContainer from "./photo/EveryTimesPhotoDisplayContainer";
+import AllPhotoDisplayContainer from "./photo/AllPhotoDisplayContainer";
 
 
 const HomeContainer = () => {
@@ -19,7 +20,7 @@ const HomeContainer = () => {
             <Route path='/index' exact component={HomePageContainer}/>
             <Route path='/today/:date' component={EveryTimesPhotoDisplayContainer}/>
             <Route path='/upload' exact component={UploadPhotoContainer}/>
-            <Route path='/password' exact component={UserPasswordContainer}/>
+            <Route path='/all' exact component={AllPhotoDisplayContainer}/>
             <Route path='*' exact component={WelcomeContainer}/>
         </Switch>
     </HomePage>)

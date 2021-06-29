@@ -6,7 +6,8 @@ import HTTP_CODE from '../utils/http-code';
 //action types
 export const types = {
     GET_INDEX_PHOTO_LIST: 'photo/GET_INDEX_PHOTO_LIST',
-    GET_INDEX_ONE_DAY_ALL_PHOTO: 'photo/GET_INDEX_ONE_DAY_ALL_PHOTO'
+    GET_INDEX_ONE_DAY_ALL_PHOTO: 'photo/GET_INDEX_ONE_DAY_ALL_PHOTO',
+    GET_ALL_PHOTO: 'photo/GET_ALL_PHOTO'
 };
 
 //action creators
@@ -35,6 +36,18 @@ export const actions = {
             })();
         }
     },
+    getAllPhoto: () => {
+        return dispatch => {
+            (async () => {
+                dispatch(appActions.startFetch());
+                const res = await request.get(`./api/photo/days/all/${window.localStorage.getItem("id")}`);
+                if (res.status === HTTP_CODE.OK) {
+                    dispatch(actions.setAllPhoto(res.body))
+                    dispatch(appActions.finishFetch());
+                }
+            })();
+        }
+    },
     setIndexPhotoList: (indexPhotoList) => {
         return {
             type: types.GET_INDEX_PHOTO_LIST,
@@ -45,6 +58,12 @@ export const actions = {
         return {
             type: types.GET_INDEX_ONE_DAY_ALL_PHOTO,
             indexOneDayAllPhoto: indexOneDayAllPhoto
+        }
+    },
+    setAllPhoto: (allPhoto) => {
+        return {
+            type: types.GET_ALL_PHOTO,
+            allPhoto: allPhoto
         }
     }
 }
@@ -73,7 +92,20 @@ const initialState = {
         src: "",
         width: "",
         height: ""
-    }]
+    }],
+    allPhoto: [{
+        src: "",
+        width: "",
+        height: ""
+    }],
+    // allPhoto: [{
+    //     date: "XXXX-XX-XX",
+    //     photoList: [{
+    //         src: "",
+    //         width: "",
+    //         height: ""
+    //     }]
+    // }]
 };
 
 // reducer
@@ -83,6 +115,8 @@ export default function reducer(state = initialState, action) {
             return {...state, indexPhotoList: action.indexPhotoList};
         case types.GET_INDEX_ONE_DAY_ALL_PHOTO:
             return {...state, indexOneDayAllPhoto: action.indexOneDayAllPhoto}
+        case types.GET_ALL_PHOTO:
+            return {...state, allPhoto: action.allPhoto}
         default:
             return state
     }

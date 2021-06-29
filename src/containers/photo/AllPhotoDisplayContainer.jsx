@@ -3,20 +3,20 @@ import {actions as photoAction} from "../../ducks/photo";
 import {connect} from "react-redux";
 import AllPhoto from "../../components/AllPhoto";
 
-const AllPhotoDisplayContainer = ({photos, getEveryTimesAllPhoto, match}) => {
+const AllPhotoDisplayContainer = ({photos, getAllPhoto}) => {
     useEffect(() => {
-        getEveryTimesAllPhoto(match.params.date);
+        getAllPhoto();
     }, [])
     return (
-        <AllPhoto photos={photos} getEveryTimesAllPhoto={getEveryTimesAllPhoto}/>
+        <AllPhoto photos={photos} getAllPhoto={getAllPhoto}/>
     )
 }
 
 const mapStateToProps = ({photo}) => ({
-    photos: photo.indexOneDayAllPhoto
+    photos: photo.allPhoto
 });
 
 const mapDispatchToProps = dispatch => ({
-    getEveryTimesAllPhoto: (date) => dispatch(photoAction.getEveryTimesAllPhoto(date)),
+    getAllPhoto: () => dispatch(photoAction.getAllPhoto()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(AllPhotoDisplayContainer);
