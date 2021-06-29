@@ -3,7 +3,7 @@ import {actions as photoAction} from "../../ducks/photo";
 import {connect} from "react-redux";
 import AllPhoto from "../../components/AllPhoto";
 
-const EveryTimesPhotoDisplayContainer = ({photos, getEveryTimesAllPhoto, match}) => {
+const AllPhotoDisplayContainer = ({photos, getEveryTimesAllPhoto, match}) => {
     useEffect(() => {
         getEveryTimesAllPhoto(match.params.date);
     }, [])
@@ -19,4 +19,4 @@ const mapStateToProps = ({photo}) => ({
 const mapDispatchToProps = dispatch => ({
     getEveryTimesAllPhoto: (date) => dispatch(photoAction.getEveryTimesAllPhoto(date)),
 });
-export default connect(mapStateToProps, mapDispatchToProps)(EveryTimesPhotoDisplayContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(AllPhotoDisplayContainer);

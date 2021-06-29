@@ -1,21 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {
     CaretRightOutlined
 } from '@ant-design/icons';
-import Test from '../images/login.jpg'
+
 import '../css/HomePage.css'
 import {Image} from 'antd';
 import {Link} from 'react-router-dom';
 
-const HomePage = ({indexPhotoList, getAllEightPhoto}) => {
-
-    useEffect(() => {
-        getAllEightPhoto();
-    }, [])
-
+const HomePage = ({indexPhotoList}) => {
     return (
         <div className="photo">
-            {indexPhotoList.map((item, i) => (
+            {indexPhotoList !== undefined ? indexPhotoList.map((item, i) => (
                 <div style={{height: "390px", float: "left"}}>
                     <div style={{padding: "30px 0 0 0"}}>
                         <span className="_month">{item.date.split("-")[1]}月</span> <span
@@ -69,7 +64,7 @@ const HomePage = ({indexPhotoList, getAllEightPhoto}) => {
                                 <img style={{height: "149px", width: "150px", objectFit: "cover"}}
                                      src={item.photoList[6].position}/>
                             </div>
-                            <Link to={"/today"} style={{color: "black"}}>
+                            <Link to={`/today/${item.date}`} style={{color: "black"}}>
                                 <div className="else">
                                     <CaretRightOutlined className="el-icon-caret-right icon_span"/>
                                     <span className="day">{item.date.split("-")[2]}</span>
@@ -79,7 +74,7 @@ const HomePage = ({indexPhotoList, getAllEightPhoto}) => {
 
                         </div>
                     </div>
-                </div>))
+                </div>)) : ""
             }
         </div>
     )

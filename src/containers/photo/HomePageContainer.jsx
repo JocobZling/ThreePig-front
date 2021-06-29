@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import HomePage from "../../components/HomePage";
 import {actions as photoAction} from "../../ducks/photo";
 import {connect} from "react-redux";
 
 const HomePageContainer = ({indexPhotoList, getAllEightPhoto}) => {
+    useEffect(() => {
+        getAllEightPhoto();
+    }, [])
+
     return (
-        <HomePage indexPhotoList={indexPhotoList} getAllEightPhoto={getAllEightPhoto}/>
+        <HomePage indexPhotoList={indexPhotoList}/>
     )
 }
 

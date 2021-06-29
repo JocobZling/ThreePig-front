@@ -6,6 +6,7 @@ import HTTP_CODE from '../utils/http-code';
 //action types
 export const types = {
     GET_INDEX_PHOTO_LIST: 'photo/GET_INDEX_PHOTO_LIST',
+    GET_INDEX_ONE_DAY_ALL_PHOTO: 'photo/GET_INDEX_ONE_DAY_ALL_PHOTO'
 };
 
 //action creators
@@ -22,13 +23,13 @@ export const actions = {
             })();
         }
     },
-    getEveryTimesAllPhoto: (date, userId) => {
+    getEveryTimesAllPhoto: (date) => {
         return dispatch => {
             (async () => {
                 dispatch(appActions.startFetch());
-                const res = await request.get(`./day/${date}/all/${userId}`);
+                const res = await request.get(`./api/photo/day/${date}/all/${window.localStorage.getItem("id")}`);
                 if (res.status === HTTP_CODE.OK) {
-                    dispatch(actions.setIndexPhotoList(res.body))
+                    dispatch(actions.setEveryTimesAllPhoto(res.body))
                     dispatch(appActions.finishFetch());
                 }
             })();
@@ -40,8 +41,10 @@ export const actions = {
             indexPhotoList: indexPhotoList
         }
     },
-    setEveryTimesAllPhoto:()=>{
+    setEveryTimesAllPhoto: (indexOneDayAllPhoto) => {
         return {
+            type: types.GET_INDEX_ONE_DAY_ALL_PHOTO,
+            indexOneDayAllPhoto: indexOneDayAllPhoto
         }
     }
 }
@@ -66,6 +69,11 @@ const initialState = {
             }
         ]
     }],
+    indexOneDayAllPhoto: [{
+        src: "",
+        width: "",
+        height: ""
+    }]
 };
 
 // reducer
@@ -73,6 +81,8 @@ export default function reducer(state = initialState, action) {
     switch (action.type) {
         case types.GET_INDEX_PHOTO_LIST:
             return {...state, indexPhotoList: action.indexPhotoList};
+        case types.GET_INDEX_ONE_DAY_ALL_PHOTO:
+            return {...state, indexOneDayAllPhoto: action.indexOneDayAllPhoto}
         default:
             return state
     }

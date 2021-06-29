@@ -1,10 +1,6 @@
 import {Layout, Menu} from 'antd';
 import React from 'react';
 import {withRouter} from 'react-router-dom'
-import {
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
-} from '@ant-design/icons';
 import '../../css/index.css'
 import LeftMenu from "../Layout/Sider";
 import LogoImg from '../../images/logo.png'
@@ -18,7 +14,7 @@ const Logo = styled('div')`
     }
 `
 
-class FaceLayout extends React.Component {
+class PhotoLayout extends React.Component {
     state = {
         collapsed: false,
     };
@@ -67,4 +63,4 @@ class FaceLayout extends React.Component {
     }
 }
 
-export default withRouter(FaceLayout);
+export default withRouter(PhotoLayout);

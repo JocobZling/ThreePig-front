@@ -17,7 +17,7 @@ const HomeContainer = () => {
         <Switch>
             <Route path='/' exact component={HomePageContainer}/>
             <Route path='/index' exact component={HomePageContainer}/>
-            <Route path='/today' exact component={EveryTimesPhotoDisplayContainer}/>
+            <Route path='/today/:date' component={EveryTimesPhotoDisplayContainer}/>
             <Route path='/upload' exact component={UploadPhotoContainer}/>
             <Route path='/password' exact component={UserPasswordContainer}/>
             <Route path='*' exact component={WelcomeContainer}/>

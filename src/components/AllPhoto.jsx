@@ -1,14 +1,12 @@
 import React, {useState, useCallback} from "react";
-import {render} from "react-dom";
 import Gallery from "react-photo-gallery";
-import {photos} from "../constant/photo"
-import Carousel, { Modal, ModalGateway } from "react-images";
+import Carousel, {Modal, ModalGateway} from "react-images";
 
-const AllPhoto = ({}) => {
+const AllPhoto = ({photos}) => {
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-    const openLightbox = useCallback((event, {photo, index}) => {
+    const openLightbox = useCallback((event, {photos, index}) => {
         setCurrentImage(index);
         setViewerIsOpen(true);
     }, []);
