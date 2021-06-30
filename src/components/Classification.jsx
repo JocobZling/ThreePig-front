@@ -1,70 +1,65 @@
-import React, {useEffect, useState} from 'react';
-import {
-    CaretRightOutlined
-} from '@ant-design/icons';
-import Test from '../images/login.jpg'
+import React from 'react';
 import '../css/HomePage.css'
-import {Image} from 'antd';
 import LogoImg from '../images/logo.png'
 import ClassDetails from "../constant/ClassDetails";
+import {Link} from 'react-router-dom';
 
-const Classify=({name})=>(
-            <div className="card-container-2" >
-                <div className="controller right"></div>
-                <div className="controller left"></div>
-                <div className="card-holder">
-                    <div className="card" style={{backgroundImage:`src:${LogoImg}`, objectFit: "cover"}}>
-                        <div className="txt-five1">
-                            <h2 className="day_text">{name}</h2>
-                        </div>
-                    </div>
-                    <div className="card" style={{backgroundImage: `src:${LogoImg}`,objectFit: "cover"}}></div>
-                    <div className="card" style={{backgroundImage: `src:${LogoImg}`, objectFit: "cover"}}></div>
-                </div>
+const Classify = ({name, position}) => (
+    <Link to={`/classification/${name}`}>
+        <div className="card-container-2">
+            <div className="controller right"></div>
+            <div className="controller left"></div>
+            <div className="card-holder">
+                <h2 className="day_text">{name}</h2>
+                <img src={position} className="card" style={{width: "100%", height: "100%", objectFit: "cover",}}
+                     alt={123}/>
+                <img src={position} className="card" style={{backgroundImage: `src:${position}`, objectFit: "cover"}}/>
+                <img src={position} className="card" style={{backgroundImage: `src:${position}`, objectFit: "cover"}}/>
             </div>
+        </div>
+    </Link>
 )
-const Classification = () => {
+const Classification = ({classificationIndexList}) => {
 
-    return(
+    return (
         <div className="container">
-            {ClassDetails.map((item,i)=>(
-                <Classify name={item.name}/>
+            {classificationIndexList.map((item, i) => (
+                <Classify name={item.type} position={item.position} key={i}/>
             ))}
 
 
-
-            <div class="card-container-4">
-                <div id="as" class="card first" style={{backgroundImage: `src:${LogoImg}`,objectFit: "cover"}}>
-                    <div class="txt-five1">
-                        <h2 class="day_text">动物</h2>
-                    </div>
-                </div>
-                <div class="card second" style={{backgroundImage: `src:${LogoImg}`,backgroundSize:"cover"}}>
-                    <div class="txt-five1">
-                        <h2 class="day_text">食物</h2>
-                    </div>
-                </div>
-                <div class="card third" style={{backgroundImage: `src:${LogoImg}`,backgroundSize:"cover"}}>
-                    <div class="txt-five1">
-                        <h2 class="day_text">工具</h2>
-                    </div>
-                </div>
-                <div class="card forth" style={{backgroundImage: `src:${LogoImg}`,backgroundSize:"cover"}}>
-                    <div class="txt-five1">
-                        <h2 class="day_text">哇</h2>
-                    </div>
-                </div>
-                <div class="card fifth" style={{backgroundImage: `src:${LogoImg}`,backgroundSize:"cover"}}>
-                    <div class="txt-five1">
-                        <h2 class="day_text">大</h2>
-                    </div>
-                </div>
-                <div class="card sixth" style={{backgroundImage: `src:${LogoImg}`,backgroundSize: "cover"}}>
-                    <div class="txt-five1">
-                        <h2 class="day_text">生活</h2>
-                    </div>
-                </div>
-            </div>
+            {/*<div className="card-container-4">*/}
+            {/*    <div id="as" className="card first" style={{backgroundImage: `src:${LogoImg}`, objectFit: "cover"}}>*/}
+            {/*        <div className="txt-five1">*/}
+            {/*            <h2 className="day_text">动物</h2>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <div className="card second" style={{backgroundImage: `src:${LogoImg}`, backgroundSize: "cover"}}>*/}
+            {/*        <div className="txt-five1">*/}
+            {/*            <h2 className="day_text">食物</h2>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <div className="card third" style={{backgroundImage: `src:${LogoImg}`, backgroundSize: "cover"}}>*/}
+            {/*        <div className="txt-five1">*/}
+            {/*            <h2 className="day_text">工具</h2>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <div className="card forth" style={{backgroundImage: `src:${LogoImg}`, backgroundSize: "cover"}}>*/}
+            {/*        <div className="txt-five1">*/}
+            {/*            <h2 className="day_text">哇</h2>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <div className="card fifth" style={{backgroundImage: `src:${LogoImg}`, backgroundSize: "cover"}}>*/}
+            {/*        <div className="txt-five1">*/}
+            {/*            <h2 className="day_text">大</h2>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <div className="card sixth" style={{backgroundImage: `src:${LogoImg}`, backgroundSize: "cover"}}>*/}
+            {/*        <div className="txt-five1">*/}
+            {/*            <h2 className="day_text">生活</h2>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
 
     )

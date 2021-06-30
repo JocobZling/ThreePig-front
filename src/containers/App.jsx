@@ -2,27 +2,27 @@ import React from 'react';
 import HomePage from "../components/Layout";
 import {Route, Switch} from 'react-router-dom';
 import WelcomeContainer from './WelcomeContainer'
-import UserPasswordContainer from "./UserPassword";
-import UserProfileContainer from "./UserProfile";
 import HomePageContainer from "./photo/HomePageContainer";
 import UploadPhotoContainer from "./photo/UploadPhotoContainer";
 import EveryTimesPhotoDisplayContainer from "./photo/EveryTimesPhotoDisplayContainer";
 import AllPhotoDisplayContainer from "./photo/AllPhotoDisplayContainer";
-import ClassificationContainer from "./ClassificationContainer";
+import ClassificationDetailContainer from "./photo/ClassificationDetailContainer";
+import ClassificationContainer from "./photo/ClassificationContainer";
 
 
 const HomeContainer = () => {
-    // if (!window.localStorage.getItem('jwt')) {
-    //     window.location.href = '/#/login'
-    // }
+    if (!window.localStorage.getItem('jwt')) {
+        window.location.href = '/#/login'
+    }
     return (<HomePage>
         <Switch>
             <Route path='/' exact component={HomePageContainer}/>
-            <Route path='/index' exact component={HomePageContainer}/>
+            {/*<Route path='/index' exact component={HomePageContainer}/>*/}
             <Route path='/today/:date' component={EveryTimesPhotoDisplayContainer}/>
             <Route path='/upload' exact component={UploadPhotoContainer}/>
             <Route path='/all' exact component={AllPhotoDisplayContainer}/>
             <Route path='/classification' exact component={ClassificationContainer}/>
+            <Route path='/classification/:type' exact component={ClassificationDetailContainer}/>
             <Route path='*' exact component={WelcomeContainer}/>
         </Switch>
     </HomePage>)

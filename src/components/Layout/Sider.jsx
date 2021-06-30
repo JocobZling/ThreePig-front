@@ -15,8 +15,8 @@ const {SubMenu} = Menu;
 const LeftMenu = () => (
     <Menu mode="inline" selectedKeys={`/${window.location.hash.split('#')[1].split('/')[1]}`}
           style={{backgroundColor: '#ebebeb'}}>
-        <Menu.Item key="/index" icon={<HeartOutlined/>}>
-            <Link to={'/index'}>欢迎</Link>
+        <Menu.Item key="/" icon={<HeartOutlined/>}>
+            <Link to={'/'}>欢迎</Link>
         </Menu.Item>
         <Menu.Item key="/upload" icon={<MonitorOutlined/>}>
             <Link to={'/upload'}>上传照片</Link>

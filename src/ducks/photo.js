@@ -7,7 +7,9 @@ import HTTP_CODE from '../utils/http-code';
 export const types = {
     GET_INDEX_PHOTO_LIST: 'photo/GET_INDEX_PHOTO_LIST',
     GET_INDEX_ONE_DAY_ALL_PHOTO: 'photo/GET_INDEX_ONE_DAY_ALL_PHOTO',
-    GET_ALL_PHOTO: 'photo/GET_ALL_PHOTO'
+    GET_ALL_PHOTO: 'photo/GET_ALL_PHOTO',
+    GET_CLASSIFICATION_INDEX_PHOTO: 'photo/GET_CLASSIFICATION_INDEX_PHOTO',
+    GET_CLASSIFICATION_ALL_PHOTO: 'photo/GET_CLASSIFICATION_ALL_PHOTO'
 };
 
 //action creators
@@ -48,6 +50,30 @@ export const actions = {
             })();
         }
     },
+    getClassificationIndexList: () => {
+        return dispatch => {
+            (async () => {
+                dispatch(appActions.startFetch());
+                const res = await request.get(`./api/photo/all/type/one/${window.localStorage.getItem("id")}`);
+                if (res.status === HTTP_CODE.OK) {
+                    dispatch(actions.setClassificationIndexList(res.body))
+                    dispatch(appActions.finishFetch())
+                }
+            })();
+        }
+    },
+    getClassificationAllPhoto: (type) => {
+        return dispatch => {
+            (async () => {
+                dispatch(appActions.startFetch());
+                const res = await request.get(`./api/photo/type/${type}/${window.localStorage.getItem("id")}`);
+                if (res.status === HTTP_CODE.OK) {
+                    dispatch(actions.setClassificationAllPhoto(res.body))
+                    dispatch(appActions.finishFetch())
+                }
+            })();
+        }
+    },
     setIndexPhotoList: (indexPhotoList) => {
         return {
             type: types.GET_INDEX_PHOTO_LIST,
@@ -64,6 +90,18 @@ export const actions = {
         return {
             type: types.GET_ALL_PHOTO,
             allPhoto: allPhoto
+        }
+    },
+    setClassificationIndexList: (classificationIndexList) => {
+        return {
+            type: types.GET_CLASSIFICATION_INDEX_PHOTO,
+            classificationIndexList: classificationIndexList
+        }
+    },
+    setClassificationAllPhoto: (classificationAllPhoto) => {
+        return {
+            type: types.GET_CLASSIFICATION_ALL_PHOTO,
+            classificationAllPhoto: classificationAllPhoto
         }
     }
 }
@@ -98,6 +136,15 @@ const initialState = {
         width: "",
         height: ""
     }],
+    classificationIndexList: [{
+        type: "",
+        position: ""
+    }],
+    classificationAllPhoto: [{
+        src: "",
+        width: "",
+        height: ""
+    }]
     // allPhoto: [{
     //     date: "XXXX-XX-XX",
     //     photoList: [{
@@ -117,6 +164,10 @@ export default function reducer(state = initialState, action) {
             return {...state, indexOneDayAllPhoto: action.indexOneDayAllPhoto}
         case types.GET_ALL_PHOTO:
             return {...state, allPhoto: action.allPhoto}
+        case types.GET_CLASSIFICATION_INDEX_PHOTO:
+            return {...state, classificationIndexList: action.classificationIndexList}
+        case types.GET_CLASSIFICATION_ALL_PHOTO:
+            return {...state, classificationAllPhoto: action.classificationAllPhoto}
         default:
             return state
     }
