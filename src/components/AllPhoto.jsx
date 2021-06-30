@@ -18,7 +18,7 @@ const AllPhoto = ({photos}) => {
 
     return (
         <div>
-            <Gallery photos={photos} onClick={openLightbox}/>
+            <Gallery photos={photos} onClick={openLightbox} targetRowHeight={250}/>
             <ModalGateway>
                 {viewerIsOpen ? (
                     <Modal onClose={closeLightbox}>

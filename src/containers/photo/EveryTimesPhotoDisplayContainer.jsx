@@ -5,7 +5,7 @@ import AllPhoto from "../../components/AllPhoto";
 
 const EveryTimesPhotoDisplayContainer = ({photos, getEveryTimesAllPhoto, match}) => {
     useEffect(() => {
-        getEveryTimesAllPhoto(match.params.type);
+        getEveryTimesAllPhoto(match.params.date);
     }, [])
     return (
         <AllPhoto photos={photos} getEveryTimesAllPhoto={getEveryTimesAllPhoto}/>
