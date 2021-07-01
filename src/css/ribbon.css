@@ -1,0 +1,85 @@
+.body{
+    margin: 0;
+    padding: 0 !important;
+}
+.ribbon {
+    display: inline-block;
+    width: 48%;
+    height: 550px;
+    position: relative;
+    float: left;
+    margin:50px 220px 0 220px;
+    background-size: cover;
+    text-transform: uppercase;
+    color: white;
+    background-color: #FFFFFF;
+
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+}
+.ribbon:nth-child(even) {margin-right: 4%;}
+@media (max-width: 500px) {
+    .ribbon {width: 100%}
+    .ribbon:nth-child(even) {margin-right: 0%;}
+}
+
+.ribbon4 {
+    position: absolute;
+    top: 15px;
+    padding: 8px 10px;
+    background: #000000;
+    box-shadow: -1px 2px 4px rgba(0,0,0,0.5);
+}
+.ribbon4:before, .ribbon4:after {
+    position: absolute;
+    content: "";
+    display: block;
+}
+.ribbon4:before {
+    width: 7px;
+    height: 100%;
+    padding: 0 0 7px;
+    top: 0;
+    left: -7px;
+    background: inherit;
+    border-radius: 5px 0 0 5px;
+}
+.ribbon4:after {
+    width: 5px;
+    height: 5px;
+    background: rgba(0,0,0,0.35);
+    bottom: -5px;
+    left: -5px;
+    border-radius: 5px 0 0 5px;
+}
+.background_cloud{
+    background-image: url("../images/background_cloud.png");
+    width: 1200px;
+    height: 650px;
+    background-size: cover;
+    margin: 0;
+
+}
+.btn{
+    border: none;
+    background-color: #000000;
+    color: #FFFFFF;
+
+}
+.btn :hover{
+    border: none;
+    background-color: #000000;
+    color: #FFFFFF;
+
+}
+.ant-upload-list-item {
+    position: relative;
+    width: 450px;
+    margin: 0 65px 6px 65px ;
+    top: 60px;
+    height: 66px;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+}
