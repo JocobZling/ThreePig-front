@@ -49,9 +49,7 @@ class PhotoLayout extends React.Component {
                     <Layout>
                         <Content
                             style={{
-                                margin: '10px 16px',
-                                padding: 24,
-                                minHeight: 280,
+                                minHeight: '89vh',
                             }}
                         >
                             {this.props.children}

@@ -233,11 +233,12 @@
 
 .container {
     float: left;
+    padding: 30px 75px 0 75px;
 }
 
 div[class*='card-container-'] {
     position: relative;
-    margin: 40px 32px 10px 30px;
+    margin: 10px 10px 10px 10px;
     width: 200px;
     height: 200px;
     perspective: 500px;
