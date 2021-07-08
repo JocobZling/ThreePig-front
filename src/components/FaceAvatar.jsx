@@ -36,7 +36,7 @@ const FaceAvatar = React.forwardRef((props, ref) => {
                 closable={false}
                 onClose={onClose}
                 visible={state.visible}
-                getContainer={"<div className={'FaceAvater'} >"}
+                getContainer={false}
                 style={{position: 'absolute'}}
             >
             </Drawer>

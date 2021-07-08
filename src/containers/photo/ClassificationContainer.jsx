@@ -10,7 +10,7 @@ const ClassificationContainer = ({classificationIndexList, getClassificationInde
         getClassificationIndexList();
     }, [])
     return (
-        <div>
+        <div >
             <FaceAvatar/>
             <Classification classificationIndexList={classificationIndexList}
                             getClassificationIndexList={getClassificationIndexList}/>

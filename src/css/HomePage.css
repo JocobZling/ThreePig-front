@@ -663,7 +663,10 @@ img {
 .roll_col .control {
     top: 240px;
 }
-
+/*classification*/
+.bg_classify{
+    background-image: url("../images/background_classify.png");
+}
 
 
 
