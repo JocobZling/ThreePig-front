@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Classification from "../../components/Classification";
 import {actions as photoAction} from "../../ducks/photo";
 import {connect} from "react-redux";
@@ -9,6 +9,7 @@ const ClassificationContainer = ({classificationIndexList, getClassificationInde
     useEffect(() => {
         getClassificationIndexList();
     }, [])
+
     return (
         <div >
             <FaceAvatar/>

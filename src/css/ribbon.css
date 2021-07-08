@@ -69,7 +69,7 @@
     color: #FFFFFF;
 
 }
-.ant-btn:hover, .ant-btn:focus, .ant-btn:active{
+.background_cloud .ribbon4 .ant-btn:hover, .ant-btn:focus, .ant-btn:active{
     border: none;
     background-color: transparent;
     color: #FFFFFF;
@@ -85,3 +85,4 @@
     border: 1px solid #d9d9d9;
     border-radius: 2px;
 }
+

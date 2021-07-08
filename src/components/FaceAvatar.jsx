@@ -1,25 +1,24 @@
-import {Avatar, Drawer, Button} from 'antd';
+import {Avatar, Drawer, Button, Modal} from 'antd';
 import {UserOutlined} from '@ant-design/icons';
-import React, {useState, useCallback} from "react";
+import React, {useState} from "react";
 
+const FaceAvatar = () => {
 
-const FaceAvatar = React.forwardRef((props, ref) => {
-    const [state, setState] = useState({
-        visible: false
-    })
-    const showDrawer = () => {
-        setState({
-            visible: true,
-        });
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
     };
 
-    const onClose = () => {
-        setState({
-            visible: false,
-        });
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
     };
     return (
-        <div className={'FaceAvater'}>
+        <div>
             <Avatar size={64} icon={<UserOutlined/>}/>
             <Avatar size={64} icon={<UserOutlined/>}/>
             <Avatar size={64} icon={<UserOutlined/>}/>
@@ -27,20 +26,19 @@ const FaceAvatar = React.forwardRef((props, ref) => {
             <Avatar size={64} icon={<UserOutlined/>}/>
             <Avatar size={64} icon={<UserOutlined/>}/>
             <Avatar size={64} icon={<UserOutlined/>}/>
-            <Button type="primary" onClick={showDrawer}>
+            <Avatar size={64} icon={<UserOutlined/>}/>
+            <Avatar size={64} icon={<UserOutlined/>}/>
+            <Avatar size={64} icon={<UserOutlined/>}/>
+            <Avatar size={64} icon={<UserOutlined/>}/>
+            <Button type="primary" onClick={showModal}>
                 Open
             </Button>
-            <Drawer
-                title="Basic Drawer"
-                placement="top"
-                closable={false}
-                onClose={onClose}
-                visible={state.visible}
-                getContainer={false}
-                style={{position: 'absolute'}}
-            >
-            </Drawer>
+            <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+            </Modal>
         </div>)
-})
+}
 
 export default FaceAvatar;
