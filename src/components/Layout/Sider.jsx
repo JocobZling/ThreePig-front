@@ -27,9 +27,6 @@ const LeftMenu = () => (
         <Menu.Item key="/classification" icon={<CalendarOutlined/>}>
             <Link to={'/classification'}>智能分类</Link>
         </Menu.Item>
-        <Menu.Item key="/face" icon={<CalendarOutlined/>}>
-            <Link to={'/face'}>人脸聚类</Link>
-        </Menu.Item>
         <Menu.Item key="/highlight" icon={<UnorderedListOutlined/>}>
             <Link to={'/highlight'}>精彩时刻</Link>
         </Menu.Item>

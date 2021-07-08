@@ -3,7 +3,12 @@ import Classification from "../../components/Classification";
 import {actions as photoAction} from "../../ducks/photo";
 import {connect} from "react-redux";
 import FaceAvatar from "../../components/FaceAvatar";
+import styled from 'styled-components';
 
+const Wrap = styled('div')`
+  min-height:89vh;
+  background-image: url(${require('../../images/background_classify.png')});
+`
 
 const ClassificationContainer = ({classificationIndexList, getClassificationIndexList}) => {
     useEffect(() => {
@@ -11,11 +16,11 @@ const ClassificationContainer = ({classificationIndexList, getClassificationInde
     }, [])
 
     return (
-        <div >
+        <Wrap>
             <FaceAvatar/>
             <Classification classificationIndexList={classificationIndexList}
                             getClassificationIndexList={getClassificationIndexList}/>
-        </div>
+        </Wrap>
     )
 }
 

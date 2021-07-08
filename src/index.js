@@ -11,7 +11,7 @@ import HomeContainer from "./containers/App";
 const reducer = combineReducers({
     app,
     user,
-    photo
+    photo,
 })
 
 const store = createStore(reducer, applyMiddleware(thunkMiddleware));
