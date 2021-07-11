@@ -15,6 +15,8 @@ import SwiperCore, {Pagination, Navigation} from 'swiper/core';
 SwiperCore.use([Pagination, Navigation]);
 
 const Wrap = styled('div')`
+ display:flex;
+ margin: 30px 20px 20px 20px;
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -24,12 +26,12 @@ const Wrap = styled('div')`
   text-align: center;
   font-size: 18px;
   background: #fff;
-
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-direction:column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -49,7 +51,7 @@ const Wrap = styled('div')`
 
 .swiper-container {
   width: 100%;
-  height: 250px;
+  height: 200px;
   margin: 10px auto;
 }
 .append-buttons {
@@ -67,6 +69,10 @@ const Wrap = styled('div')`
   border-radius: 4px;
   margin: 0 10px;
   font-size: 13px;
+  
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+    color:white;
 }
 `
 
@@ -76,11 +82,14 @@ const TimesViewer = ({everyTime}) => {
 
     return (
         <Wrap>
-            <Swiper onSwiper={setSwiperRef} slidesPerView={3} centeredSlides={true} spaceBetween={30} pagination={{
+            <div>回忆录</div>
+            <Swiper onSwiper={setSwiperRef} slidesPerView={5} centeredSlides={false} spaceBetween={20} pagination={{
                 "type": "fraction"
             }} navigation={true} className="mySwiper">
                 {everyTime.map((item, i) => (
-                    <SwiperSlide key={i}><img src={item.src}/></SwiperSlide>
+                    <SwiperSlide key={i}>
+                        <img src={item.src} alt={'error'}/>
+                    </SwiperSlide>
                 ))}
             </Swiper>
         </Wrap>

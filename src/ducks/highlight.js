@@ -31,6 +31,18 @@ export const actions = {
 }
 const initialState = {
     highlightIndexPhoto: {
+        BestAll: {
+            position: ""
+        },
+        BestPerson: {
+            position: ""
+        },
+        BestRecentAll: {
+            position: ""
+        },
+        BestRecentPerson: {
+            position: ""
+        },
         EveryTime: {
             tandP: [{
                 date: "",
