@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, {Modal, ModalGateway} from "react-images";
+import { Image } from "antd";
 
 const AllPhoto = ({photos}) => {
     const [currentImage, setCurrentImage] = useState(0);
@@ -34,12 +35,16 @@ const AllPhoto = ({photos}) => {
                         </Modal>
                     ) : null}
                 </ModalGateway>
-            </div> : <div>
+            </div> : <Image.PreviewGroup>
                 {photos.map((item, i) => (
-                        <img src={item.src} key={i} style={{width: '400px', height: "auto"}}/>
+                        <Image
+                            width={400}
+                            src={item.src}
+                            key={i}
+                        />
                     )
                 )}
-            </div>
+            </Image.PreviewGroup>
     );
 }
 

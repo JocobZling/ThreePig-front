@@ -19,9 +19,9 @@ const FaceLeft = styled('img')`
 `
 const FaceRight = styled('img')`
     position:relative;
-    top:20px;
-    left:40px;
-    height: 85px;
+    top:19px;
+    left:35px;
+    height:80px;
     float:right;
 `
 const FaceAvatar = ({indexEightFaceList, indexAllFaceList}) => {
@@ -42,12 +42,15 @@ const FaceAvatar = ({indexEightFaceList, indexAllFaceList}) => {
     return (
         <Wrap>
             <LabelComponent name={"人物识别"}/>
-            <FaceLeft src={CloudLeft}/>
-            {indexEightFaceList.map((face, i) => (
-                <Link to={`/face/${face.clusteringId}`}><Avatar size={80} src={face.position} key={i}
-                                                                style={{margin: '0 19px 20px 20px'}}/></Link>
-            ))}
-            <FaceRight onClick={showModal} src={CloudRight}/>
+            <div style={{display:'flex',alignItems:'flex-end'}}>
+                <FaceLeft src={CloudLeft}/>
+                    {indexEightFaceList.map((face, i) => (
+                        <Link to={`/face/${face.clusteringId}`}><Avatar size={80} src={face.position} key={i}
+                                                                        style={{margin: '0 19px 20px 20px'}}/></Link>
+                    ))}
+                    <FaceRight onClick={showModal} src={CloudRight}/>
+            </div>
+
 
 
             <Modal title="More" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} width={1000}

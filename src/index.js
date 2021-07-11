@@ -23,7 +23,7 @@ ReactDOM.render(
         <HashRouter>
             <Route path={['/']} exact component={HomeContainer}/>
             <Route
-                path={['/today', '/upload', '/all', '/classification','/face']} component={HomeContainer}/>
+                path={['/today', '/upload', '/all', '/classification','/face','/highlight']} component={HomeContainer}/>
             <Route path='/login' exact component={LoginContainer}/>
             <Route path='/register' exact component={RegisterContainer}/>
         </HashRouter>

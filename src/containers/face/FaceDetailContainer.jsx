@@ -1,6 +1,5 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect } from "react";
 import {connect} from "react-redux";
-import {Row, Col} from 'antd';
 import FaceDetail from "../../components/Face/FaceDetail";
 import {actions as faceAction} from "../../ducks/face";
 
