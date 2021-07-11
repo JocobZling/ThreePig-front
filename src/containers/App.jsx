@@ -8,6 +8,7 @@ import EveryTimesPhotoDisplayContainer from "./photo/EveryTimesPhotoDisplayConta
 import AllPhotoDisplayContainer from "./photo/AllPhotoDisplayContainer";
 import ClassificationDetailContainer from "./photo/ClassificationDetailContainer";
 import ClassificationContainer from "./photo/ClassificationContainer";
+import FaceDetailContainer from "./face/FaceDetailContainer";
 
 
 const HomeContainer = () => {
@@ -23,6 +24,7 @@ const HomeContainer = () => {
             <Route path='/all' exact component={AllPhotoDisplayContainer}/>
             <Route path='/classification' exact component={ClassificationContainer}/>
             <Route path='/classification/:type' exact component={ClassificationDetailContainer}/>
+            <Route path='/face/:clusteringId' exact component={FaceDetailContainer}/>
             <Route path='*' exact component={WelcomeContainer}/>
         </Switch>
     </HomePage>)

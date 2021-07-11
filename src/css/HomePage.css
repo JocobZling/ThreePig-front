@@ -232,23 +232,24 @@
 /*day_details*/
 
 .container {
-    padding: 30px 75px 0 75px;
+
 }
 
 div[class*='card-container-'] {
     position: relative;
     margin: 10px 10px 10px 10px;
-    width: 200px;
-    height: 200px;
+    width: 135px;
+    height: 135px;
     perspective: 500px;
 }
 
 .day_text {
     position: absolute;
-    left: 20px;
-    top: 140px;
+    left: 10px;
+    top: 95px;
     z-index: 100000;
     color: whitesmoke !important;
+    font-size: 22px;
 }
 
 .card-container-2 {

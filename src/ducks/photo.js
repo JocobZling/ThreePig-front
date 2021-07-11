@@ -10,7 +10,6 @@ export const types = {
     GET_ALL_PHOTO: 'photo/GET_ALL_PHOTO',
     GET_CLASSIFICATION_INDEX_PHOTO: 'photo/GET_CLASSIFICATION_INDEX_PHOTO',
     GET_CLASSIFICATION_ALL_PHOTO: 'photo/GET_CLASSIFICATION_ALL_PHOTO',
-    GET_FACE_EIGHT_INDEX_PHOTO: 'photo/GET_FACE_EIGHT_INDEX_PHOTO',
 };
 
 //action creators
@@ -154,11 +153,6 @@ const initialState = {
     //         height: ""
     //     }]
     // }]
-    indexFaceList: [
-        {
-            position: "",
-        }]
-
 };
 
 // reducer
@@ -174,8 +168,6 @@ export default function reducer(state = initialState, action) {
             return {...state, classificationIndexList: action.classificationIndexList}
         case types.GET_CLASSIFICATION_ALL_PHOTO:
             return {...state, classificationAllPhoto: action.classificationAllPhoto}
-        case types.GET_FACE_EIGHT_INDEX_PHOTO:
-            return {...state,}
         default:
             return state
     }

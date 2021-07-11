@@ -2,7 +2,7 @@ import React, {useState, useCallback} from "react";
 
 import {actions as photoAction} from "../../ducks/photo";
 import {connect} from "react-redux";
-import UploadPhoto from "../../components/UploadPhoto";
+import UploadPhoto from "../../components/Photo/UploadPhoto";
 
 const UploadPhotoContainer = ({}) => {
 

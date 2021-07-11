@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {actions as photoAction} from "../../ducks/photo";
 import {connect} from "react-redux";
-import AllPhoto from "../../components/AllPhoto";
+import AllPhoto from "../../components/Photo/AllPhoto";
 
 const EveryTimesPhotoDisplayContainer = ({photos, getEveryTimesAllPhoto, match}) => {
     useEffect(() => {

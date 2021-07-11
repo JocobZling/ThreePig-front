@@ -50,6 +50,7 @@ class PhotoLayout extends React.Component {
                         <Content
                             style={{
                                 minHeight: '89vh',
+                                background: `url(${require('../../images/background_classify.png')})`
                             }}
                         >
                             {this.props.children}

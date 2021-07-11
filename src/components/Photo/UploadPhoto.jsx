@@ -1,8 +1,8 @@
 import {Upload, Button} from 'antd';
 import {UploadOutlined} from '@ant-design/icons';
 import React from "react";
-import * as utils from '../utils/fetch-request'
-import '../css/ribbon.css'
+import * as utils from '../../utils/fetch-request'
+import '../../css/ribbon.css'
 
 const action = '/api/photo/upload/' + utils.getHeaderFromLocalStorage('id')
 
