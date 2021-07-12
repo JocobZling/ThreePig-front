@@ -21,3 +21,23 @@
 /*.site-layout .site-layout-background {*/
 /*    background: #fff;*/
 /*}*/
+/*menu*/
+.menu .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #000000;
+}
+.menu .ant-menu-item-selected {
+    color: #ffffff !important;
+}
+.menu .ant-menu-item a:hover{
+    color:  rgb(118 118 118);
+}
+.menu .ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+    border-right: 3px solid #002343 !important;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #747474 !important;
+}
+.menu .ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+    color: #ffffff !important;
+/*    选中 上传照片*/
+}
