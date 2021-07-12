@@ -13,6 +13,7 @@ import SwiperCore, {
     EffectCoverflow, Pagination
 } from 'swiper/core';
 import styled from "styled-components";
+import {Link} from 'react-router-dom';
 
 // install Swiper modules
 SwiperCore.use([EffectCoverflow, Pagination]);
@@ -74,39 +75,45 @@ const HighlightContent = ({bestAll, bestRecentAll, bestPerson, bestRecentPerson}
                     }} className="mySwiper">
 
                 <SwiperSlide>
-                    <SiderWrap>
-                        <img src={bestRecentAll.position}/>
-                        <div className={'day_date'}>
-                            近期精彩
-                        </div>
-                    </SiderWrap>
+                    <Link to={`/highlight/BestRecentAll`}>
+                        <SiderWrap>
+                            <img src={bestRecentAll.position}/>
+                            <div className={'day_date'}>
+                                近期精彩
+                            </div>
+                        </SiderWrap>
+                    </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <SiderWrap>
-                        <img src={bestRecentPerson.position}/>
-                        <div className={'day_date'}>
-                            人物
-                        </div>
-                    </SiderWrap>
+                    <Link to={`/highlight/BestRecentPerson`}>
+                        <SiderWrap>
+                            <img src={bestRecentPerson.position}/>
+                            <div className={'day_date'}>
+                                人物
+                            </div>
+                        </SiderWrap>
+                    </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <SiderWrap>
-                        <img src={bestAll.position}/>
-                        <div className={'day_date'}>
-                            高光时刻
-                        </div>
-                    </SiderWrap>
-
+                    <Link to={`/highlight/BestAll`}>
+                        <SiderWrap>
+                            <img src={bestAll.position}/>
+                            <div className={'day_date'}>
+                                高光时刻
+                            </div>
+                        </SiderWrap>
+                    </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <SiderWrap>
-                        <img src={bestPerson.position}/>
-                        <div className={'day_date'}>
-                            人物
-                        </div>
-                    </SiderWrap>
+                    <Link to={`/highlight/BestPerson`}>
+                        <SiderWrap>
+                            <img src={bestPerson.position}/>
+                            <div className={'day_date'}>
+                                人物
+                            </div>
+                        </SiderWrap>
+                    </Link>
                 </SwiperSlide>
-
             </Swiper>
         </Wrap>
     )

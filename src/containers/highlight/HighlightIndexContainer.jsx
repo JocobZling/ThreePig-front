@@ -7,7 +7,7 @@ const HighlightIndexContainer = ({getHighlightIndexPhoto, highlightIndexPhoto}) 
     useEffect(() => {
         getHighlightIndexPhoto();
     }, [])
-    return <HighlightIndex highlightIndexPhoto={highlightIndexPhoto}/>
+    return <HighlightIndex highlightIndexPhoto={highlightIndexPhoto} getHighlightIndexPhoto={getHighlightIndexPhoto}/>
 }
 
 

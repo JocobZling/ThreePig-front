@@ -10,6 +10,7 @@ import ClassificationDetailContainer from "./photo/ClassificationDetailContainer
 import ClassificationContainer from "./photo/ClassificationContainer";
 import FaceDetailContainer from "./face/FaceDetailContainer";
 import HighlightIndexContainer from "./highlight/HighlightIndexContainer";
+import HighlightDetailContainer from "./highlight/HighlightDetailContainer";
 
 
 const HomeContainer = () => {
@@ -27,6 +28,8 @@ const HomeContainer = () => {
             <Route path='/classification/:type' exact component={ClassificationDetailContainer}/>
             <Route path='/face/:clusteringId' exact component={FaceDetailContainer}/>
             <Route path='/highlight' exact component={HighlightIndexContainer}/>
+            <Route path='/highlight/:type' exact component={HighlightDetailContainer}/>
+            <Route path='/highlight/:type/:date' exact component={HighlightDetailContainer}/>
             <Route path='*' exact component={WelcomeContainer}/>
         </Switch>
     </HomePage>)

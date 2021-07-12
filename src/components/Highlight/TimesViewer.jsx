@@ -7,6 +7,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
 import "swiper/components/navigation/navigation.min.css"
 import History from '../../images/history.png'
+import {Link} from 'react-router-dom';
 
 // import Swiper core and required modules
 import SwiperCore, {Pagination, Navigation} from 'swiper/core';
@@ -101,9 +102,7 @@ const Wrap = styled('div')`
 `
 
 const TimesViewer = ({everyTime}) => {
-    console.log(everyTime)
     const [setSwiperRef] = useState(null);
-
     return (
         <Wrap>
             <img className="wrapImg" src={History}/>
@@ -112,12 +111,14 @@ const TimesViewer = ({everyTime}) => {
             }} navigation={true} className="mySwiper">
                 {everyTime.map((item, i) => (
                     <SwiperSlide key={i}>
-                        <img src={item.src} alt={'error'}/>
+                        <Link to={`/highlight/EveryTime/${item.date}`} style={{display:'flex'}}>
+                            <img src={item.src} alt={'error'} />
+                        </Link>
                         <div className={'day_date_1'}>
-                            {item.date.split('年')[1]}
+                            {item.date.split('-')[1]}月{item.date.split('-')[2]}日
                         </div>
                         <div className={'day_date_2'}>
-                            {item.date.split('年')[0]}年
+                            {item.date.split('-')[0]}年
                         </div>
                     </SwiperSlide>
                 ))}
