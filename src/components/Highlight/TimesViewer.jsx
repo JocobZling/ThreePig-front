@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
 import "swiper/components/navigation/navigation.min.css"
-
+import History from '../../images/history.png'
 
 // import Swiper core and required modules
 import SwiperCore, {Pagination, Navigation} from 'swiper/core';
@@ -17,6 +17,11 @@ SwiperCore.use([Pagination, Navigation]);
 const Wrap = styled('div')`
  display:flex;
  margin: 30px 20px 20px 20px;
+ 
+ .wrapImg{
+    height:203px;
+    margin:7px 20px 0 20px;
+ }
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -74,6 +79,25 @@ const Wrap = styled('div')`
 .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
     color:white;
 }
+
+.day_date_1{
+    position: absolute;
+    left: 10px;
+    bottom: 36px;
+    z-index: 100000;
+    color: whitesmoke !important;
+    font-size: 30px;
+    font-weight:400
+}
+.day_date_2{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 100000;
+    color: whitesmoke !important;
+    font-size: 22px;
+}
+
 `
 
 const TimesViewer = ({everyTime}) => {
@@ -82,13 +106,19 @@ const TimesViewer = ({everyTime}) => {
 
     return (
         <Wrap>
-            <div>回忆录</div>
-            <Swiper onSwiper={setSwiperRef} slidesPerView={5} centeredSlides={false} spaceBetween={20} pagination={{
+            <img className="wrapImg" src={History}/>
+            <Swiper onSwiper={setSwiperRef} slidesPerView={6} centeredSlides={false} spaceBetween={20} pagination={{
                 "type": "fraction"
             }} navigation={true} className="mySwiper">
                 {everyTime.map((item, i) => (
                     <SwiperSlide key={i}>
                         <img src={item.src} alt={'error'}/>
+                        <div className={'day_date_1'}>
+                            {item.date.split('年')[1]}
+                        </div>
+                        <div className={'day_date_2'}>
+                            {item.date.split('年')[0]}年
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>

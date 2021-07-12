@@ -3,9 +3,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {
     HeartOutlined,
-    UserOutlined,
+    VideoCameraOutlined,
     CalendarOutlined,
-    MonitorOutlined,
+    CloudUploadOutlined,
     UnorderedListOutlined
 } from '@ant-design/icons';
 import '../../css/index.css'
@@ -18,7 +18,7 @@ const LeftMenu = () => (
         <Menu.Item key="/" icon={<HeartOutlined/>}>
             <Link to={'/'}>欢迎</Link>
         </Menu.Item>
-        <Menu.Item key="/upload" icon={<MonitorOutlined/>}>
+        <Menu.Item key="/upload" icon={<CloudUploadOutlined />}>
             <Link to={'/upload'}>上传照片</Link>
         </Menu.Item>
         <Menu.Item key="/all" icon={<UnorderedListOutlined/>}>
@@ -27,7 +27,7 @@ const LeftMenu = () => (
         <Menu.Item key="/classification" icon={<CalendarOutlined/>}>
             <Link to={'/classification'}>智能分类</Link>
         </Menu.Item>
-        <Menu.Item key="/highlight" icon={<UnorderedListOutlined/>}>
+        <Menu.Item key="/highlight" icon={<VideoCameraOutlined />}>
             <Link to={'/highlight'}>精彩时刻</Link>
         </Menu.Item>
 
