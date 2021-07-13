@@ -2,13 +2,17 @@ import React, {useEffect} from "react";
 import {actions as photoAction} from "../../ducks/photo";
 import {connect} from "react-redux";
 import AllPhoto from "../../components/Photo/AllPhoto";
+import Back from "../../components/Layout/Back";
 
 const EveryTimesPhotoDisplayContainer = ({photos, getEveryTimesAllPhoto, match}) => {
     useEffect(() => {
         getEveryTimesAllPhoto(match.params.date);
     }, [])
     return (
-        <AllPhoto photos={photos} getEveryTimesAllPhoto={getEveryTimesAllPhoto}/>
+        <>
+            <Back back={'/'}/>
+            <AllPhoto photos={photos} getEveryTimesAllPhoto={getEveryTimesAllPhoto}/>
+        </>
     )
 }
 

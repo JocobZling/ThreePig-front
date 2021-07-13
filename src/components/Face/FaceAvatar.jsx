@@ -59,7 +59,7 @@ const FaceAvatar = ({indexEightFaceList, indexAllFaceList}) => {
                    centered={true}
             >
                 {indexAllFaceList.map((face, i) => (
-                    <Link to={`/face/${face.clusteringId}`}><Avatar size={80} src={face.position} key={i}
+                    <Link to={`/face/${face.clusteringId}`}><Avatar size={80} src={face.position} key={i+'more'}
                                                                     style={{margin: '0 19px 20px 20px'}}/></Link>))
                 }
             </Modal>

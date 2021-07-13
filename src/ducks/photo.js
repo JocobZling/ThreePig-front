@@ -131,11 +131,11 @@ const initialState = {
         width: "",
         height: ""
     }],
-    allPhoto: [{
-        src: "",
-        width: "",
-        height: ""
-    }],
+    // allPhoto: [{
+    //     src: "",
+    //     width: "",
+    //     height: ""
+    // }],
     classificationIndexList: [{
         type: "",
         position: ""
@@ -145,14 +145,14 @@ const initialState = {
         width: "",
         height: ""
     }],
-    // allPhoto: [{
-    //     date: "XXXX-XX-XX",
-    //     photoList: [{
-    //         src: "",
-    //         width: "",
-    //         height: ""
-    //     }]
-    // }]
+    allPhoto: [{
+        date: "XXXX-XX-XX",
+        photoDisplayVoList: [{
+            src: "",
+            width: "",
+            height: ""
+        }]
+    }]
 };
 
 // reducer

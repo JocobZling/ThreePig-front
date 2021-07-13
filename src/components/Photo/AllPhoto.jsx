@@ -1,9 +1,9 @@
 import React, {useState, useCallback} from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, {Modal, ModalGateway} from "react-images";
-import { Image } from "antd";
+import {Image} from "antd";
 
-const AllPhoto = ({photos}) => {
+const AllPhoto = ({photos, rowHeight, width}) => {
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -20,7 +20,7 @@ const AllPhoto = ({photos}) => {
     return (
         photos.length >= 2 ?
             <div>
-                <Gallery photos={photos} onClick={openLightbox} targetRowHeight={250}/>
+                <Gallery photos={photos} onClick={openLightbox} targetRowHeight={rowHeight}/>
                 <ModalGateway>
                     {viewerIsOpen ? (
                         <Modal onClose={closeLightbox}>
@@ -38,7 +38,7 @@ const AllPhoto = ({photos}) => {
             </div> : <Image.PreviewGroup>
                 {photos.map((item, i) => (
                         <Image
-                            width={400}
+                            width={width}
                             src={item.src}
                             key={i}
                         />

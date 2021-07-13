@@ -7,7 +7,7 @@
 }
 
 #components-layout-demo-custom-trigger .trigger:hover {
-    color: #1890ff;
+    color:black;
 }
 
 #components-layout-demo-custom-trigger .logo {
@@ -40,4 +40,8 @@
 .menu .ant-menu-item-selected a, .ant-menu-item-selected a:hover {
     color: #ffffff !important;
 /*    选中 上传照片*/
+}
+
+.menu .ant-menu-item .ant-menu-item-selected:hover{
+    color: #ffffff !important;
 }

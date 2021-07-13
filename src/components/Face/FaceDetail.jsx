@@ -3,6 +3,7 @@ import React from "react";
 import styled from 'styled-components';
 import {EditOutlined, UserOutlined} from '@ant-design/icons';
 import AllPhoto from "../Photo/AllPhoto";
+import Back from "../Layout/Back";
 
 const AvatarWrap = styled('div')`
     display:flex;
@@ -20,6 +21,7 @@ const DetailWrap = styled('div')`
 `
 const FaceDetail = ({faceList}) => (
     <div>
+        <Back back={'/classification'}/>
         <AvatarWrap>
             <Avatar size={80} icon={<UserOutlined/>}/>
             <AvatarFontWrap>

@@ -2,13 +2,14 @@ import React, {useEffect} from "react";
 import {actions as photoAction} from "../../ducks/photo";
 import {connect} from "react-redux";
 import AllPhoto from "../../components/Photo/AllPhoto";
+import AllPhotoParseDate from "../../components/Photo/AllPhotoParseDate";
 
 const AllPhotoDisplayContainer = ({photos, getAllPhoto}) => {
     useEffect(() => {
         getAllPhoto();
     }, [])
     return (
-        <AllPhoto photos={photos} getAllPhoto={getAllPhoto}/>
+        <AllPhotoParseDate photos={photos} getAllPhoto={getAllPhoto}/>
     )
 }
 
