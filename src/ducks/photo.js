@@ -14,11 +14,11 @@ export const types = {
 
 //action creators
 export const actions = {
-    getAllEightPhoto: () => {
+    getAllEightPhoto: (id = window.localStorage.getItem("id") || 0) => {
         return dispatch => {
             (async () => {
                 dispatch(appActions.startFetch());
-                const res = await request.get(`./api/photo/all/eight/${window.localStorage.getItem("id")}`);
+                const res = await request.get(`./api/photo/all/eight/${id}`);
                 if (res.status === HTTP_CODE.OK) {
                     dispatch(actions.setIndexPhotoList(res.body))
                     dispatch(appActions.finishFetch());

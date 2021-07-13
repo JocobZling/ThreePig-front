@@ -20,8 +20,8 @@ const HomeContainer = () => {
     return (<HomePage>
         <Switch>
             <Route path='/' exact component={HomePageContainer}/>
-            {/*<Route path='/index' exact component={HomePageContainer}/>*/}
-            <Route path='/today/:date' component={EveryTimesPhotoDisplayContainer}/>
+            <Route path='/index' exact component={HomePageContainer}/>
+            <Route path='/today/:date' exact component={EveryTimesPhotoDisplayContainer}/>
             <Route path='/upload' exact component={UploadPhotoContainer}/>
             <Route path='/all' exact component={AllPhotoDisplayContainer}/>
             <Route path='/classification' exact component={ClassificationContainer}/>

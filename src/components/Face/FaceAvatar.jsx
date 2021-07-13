@@ -18,11 +18,12 @@ const FaceLeft = styled('img')`
     vertical-align: bottom;
 `
 const FaceRight = styled('img')`
-    position:relative;
-    top:19px;
-    left:35px;
+    position:absolute;
+    top:120px;
+    right:35px;
     height:80px;
     float:right;
+    
 `
 const FaceAvatar = ({indexEightFaceList, indexAllFaceList}) => {
 

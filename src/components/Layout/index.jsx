@@ -1,10 +1,12 @@
-import {Layout, Menu} from 'antd';
+import {Layout, Avatar} from 'antd';
+import {UserOutlined} from '@ant-design/icons';
 import React from 'react';
 import {withRouter} from 'react-router-dom'
 import '../../css/index.css'
 import LeftMenu from "../Layout/Sider";
 import LogoImg from '../../images/logo.png'
 import styled from "styled-components";
+import HeaderAvatar from "../User/HeaderAvatar";
 
 const {Header, Sider, Content} = Layout;
 
@@ -27,10 +29,19 @@ class PhotoLayout extends React.Component {
     render() {
         return (
             <Layout>
-                <Header style={{backgroundColor: "white", marginTop: "1vh", minHeight: "10vh"}}>
+                <Header style={{
+                    backgroundColor: "white",
+                    marginTop: "1vh",
+                    minHeight: "10vh",
+                    display: "flex",
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                }}>
                     <Logo>
                         <img src={LogoImg} alt={'logo'} className="logo"/>
                     </Logo>
+                    <HeaderAvatar/>
                 </Header>
 
                 <Layout>
