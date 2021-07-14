@@ -1,16 +1,16 @@
-import React, {useEffect } from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import FaceDetail from "../../components/Face/FaceDetail";
 import {actions as faceAction} from "../../ducks/face";
 
 
-const FaceDetailContainer = ({getFaceAllPhoto, allFacePhoto, match}) => {
+const FaceDetailContainer = ({getFaceAllPhoto, allFacePhoto, match, updateClusteringName}) => {
     useEffect(() => {
         getFaceAllPhoto(match.params.clusteringId);
     }, [])
 
     return (
-        <FaceDetail faceList={allFacePhoto}/>
+        <FaceDetail faceList={allFacePhoto} updateClusteringName={updateClusteringName} id={match.params.clusteringId}/>
     )
 }
 
@@ -21,5 +21,6 @@ const mapStateToProps = ({face}) => ({
 
 const mapDispatchToProps = dispatch => ({
     getFaceAllPhoto: (clusteringId) => dispatch(faceAction.getFaceAllPhoto(clusteringId)),
+    updateClusteringName: (name, clusteringId) => dispatch(faceAction.updateClusteringName(name, clusteringId))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(FaceDetailContainer);

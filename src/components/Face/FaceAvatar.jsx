@@ -23,6 +23,7 @@ const FaceRight = styled('img')`
     right:35px;
     height:80px;
     float:right;
+    cursor: pointer;
     
 `
 const FaceAvatar = ({indexEightFaceList, indexAllFaceList}) => {
@@ -43,15 +44,14 @@ const FaceAvatar = ({indexEightFaceList, indexAllFaceList}) => {
     return (
         <Wrap>
             <LabelComponent name={"人物识别"}/>
-            <div style={{display:'flex',alignItems:'flex-end'}}>
+            <div style={{display: 'flex', alignItems: 'flex-end'}}>
                 <FaceLeft src={CloudLeft}/>
-                    {indexEightFaceList.map((face, i) => (
-                        <Link to={`/face/${face.clusteringId}`}><Avatar size={80} src={face.position} key={i}
-                                                                        style={{margin: '0 19px 20px 20px'}}/></Link>
-                    ))}
-                    <FaceRight onClick={showModal} src={CloudRight}/>
+                {indexEightFaceList.map((face, i) => (
+                    <Link to={`/face/${face.clusteringId}`}><Avatar size={80} src={face.position} key={i}
+                                                                    style={{margin: '0 19px 20px 20px'}}/></Link>
+                ))}
+                <FaceRight onClick={showModal} src={CloudRight}/>
             </div>
-
 
 
             <Modal title="More" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} width={1000}
@@ -60,7 +60,7 @@ const FaceAvatar = ({indexEightFaceList, indexAllFaceList}) => {
                    centered={true}
             >
                 {indexAllFaceList.map((face, i) => (
-                    <Link to={`/face/${face.clusteringId}`}><Avatar size={80} src={face.position} key={i+'more'}
+                    <Link to={`/face/${face.clusteringId}`}><Avatar size={80} src={face.position} key={i + 'more'}
                                                                     style={{margin: '0 19px 20px 20px'}}/></Link>))
                 }
             </Modal>

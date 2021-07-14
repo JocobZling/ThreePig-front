@@ -48,6 +48,18 @@ export const actions = {
             })();
         }
     },
+    updateClusteringName: (name, clusteringId) => {
+        return dispatch => {
+            (async () => {
+                dispatch(appActions.startFetch());
+                const res = await request.update(`./api/face/update/${clusteringId}/clusteringName/${window.localStorage.getItem("id")}`, name);
+                if (res.status === HTTP_CODE.OK) {
+                    dispatch(actions.getFaceAllPhoto(clusteringId))
+                    dispatch(appActions.finishFetch())
+                }
+            })();
+        }
+    },
     setFaceIndexEightPhoto: (indexEightFaceList) => {
         return {
             type: types.GET_FACE_EIGHT_INDEX_PHOTO,
@@ -74,12 +86,16 @@ const initialState = {
     indexAllFaceList: [{
         position: ""
     }],
-    allFacePhoto: [{
-        src: "",
-        width: "",
-        height: ""
-    }]
-};
+    allFacePhoto: {
+        facePosition: "",
+        clusteringName: "",
+        photoDisplayVoList: [{
+            src: "",
+            width: "",
+            height: ""
+        }]
+    },
+}
 
 // reducer
 export default function reducer(state = initialState, action) {

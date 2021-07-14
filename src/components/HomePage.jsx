@@ -4,12 +4,12 @@ import {
 } from '@ant-design/icons';
 
 import '../css/HomePage.css'
-import {Image,Row } from 'antd';
+import {Image, Row, Empty} from 'antd';
 import {Link} from 'react-router-dom';
 
 const HomePage = ({indexPhotoList}) => {
     return (
-        <Row style={{margin:'1vh 0 10vh 12vh'}}>
+        <Row style={{margin: '1vh 0 10vh 12vh'}}>
             {indexPhotoList.map((item, i) => (
                 item.photoList.length >= 7 ?
                     <div style={{height: "390px", float: "left"}}>
