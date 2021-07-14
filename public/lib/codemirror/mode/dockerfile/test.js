@@ -2,7 +2,7 @@
 // Distributed under an MIT license: https://codemirror.net/LICENSE
 
 (function() {
-  var mode = CodeMirror.getMode({indentUnit: 2}, "text/x-dockerfile");
+  var mode = CodeMirror.getMode({indentUnit: 2}, "text/x-Dockerfile");
   function MT(name) { test.mode(name, mode, Array.prototype.slice.call(arguments, 1)); }
 
   MT("simple_nodejs_dockerfile",

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {EditOutlined, UserOutlined} from '@ant-design/icons';
 import AllPhoto from "../Photo/AllPhoto";
 import Back from "../Layout/Back";
+import CloudDetail from "../../images/cloud_detail.png"
 
 const AvatarWrap = styled('div')`
     display:flex;
@@ -39,6 +40,7 @@ const FaceDetail = ({faceList, updateClusteringName, id}) => {
     return (<div>
         <Back back={'/classification'}/>
         <AvatarWrap>
+            <img src={CloudDetail} style={{width: '80px', position: 'relative', left: '4vh'}}/>
             <Avatar size={80} src={faceList.facePosition}/>
             <AvatarFontWrap>
                 <div>{faceList.photoDisplayVoList.length}张</div>

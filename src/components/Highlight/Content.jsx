@@ -99,7 +99,7 @@ const HighlightContent = ({bestAll, bestRecentAll, bestPerson, bestRecentPerson}
                         <SiderWrap>
                             <img src={bestAll.position}/>
                             <div className={'day_date'}>
-                                高光时刻
+                                精选故事集
                             </div>
                         </SiderWrap>
                     </Link>
@@ -109,7 +109,7 @@ const HighlightContent = ({bestAll, bestRecentAll, bestPerson, bestRecentPerson}
                         <SiderWrap>
                             <img src={bestPerson.position}/>
                             <div className={'day_date'}>
-                                人物
+                                那些年那些人
                             </div>
                         </SiderWrap>
                     </Link>
