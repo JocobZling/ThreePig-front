@@ -11,7 +11,7 @@ const ClassificationDetailContainer = ({photos, getClassificationAllPhoto, match
     return (
         <>
             <Back back={'/classification'}/>
-            <AllPhoto photos={photos} getClassificationAllPhoto={getClassificationAllPhoto}/>
+            <AllPhoto photos={photos} getClassificationAllPhoto={getClassificationAllPhoto} rowHeight={250}/>
         </>
     )
 }

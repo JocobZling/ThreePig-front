@@ -7,7 +7,7 @@
 }
 
 #components-layout-demo-custom-trigger .trigger:hover {
-    color:black;
+    color: black;
 }
 
 #components-layout-demo-custom-trigger .logo {
@@ -15,9 +15,11 @@
     background: rgba(255, 255, 255, 0.3);
     margin: 16px;
 }
-.ant-layout-header{
-    padding: 0 ;
+
+.ant-layout-header {
+    padding: 0;
 }
+
 /*.site-layout .site-layout-background {*/
 /*    background: #fff;*/
 /*}*/
@@ -25,23 +27,41 @@
 .menu .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background-color: #000000;
 }
+
 .menu .ant-menu-item-selected {
     color: #ffffff !important;
 }
-.menu .ant-menu-item a:hover{
-    color:  rgb(118 118 118);
+
+.menu .ant-menu-item a:hover {
+    color: rgb(118 118 118);
 }
+
 .menu .ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
     border-right: 3px solid #002343 !important;
 }
+
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
     background-color: #747474 !important;
 }
+
 .menu .ant-menu-item-selected a, .ant-menu-item-selected a:hover {
     color: #ffffff !important;
-/*    选中 上传照片*/
+    /*    选中 上传照片*/
 }
 
-.menu .ant-menu-item .ant-menu-item-selected:hover{
+.menu .ant-menu-item .ant-menu-item-selected:hover {
     color: #ffffff !important;
+}
+
+.menu .ant-menu-item .ant-menu-item-active:hover {
+    color: #747474 !important;
+}
+
+.menu .ant-menu-item .ant-menu-item-icon, .ant-menu-submenu-title .ant-menu-item-icon, .ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
+    transition: font-size 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), margin 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.3s;
+    color: darkgray !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: darkgray !important;
 }

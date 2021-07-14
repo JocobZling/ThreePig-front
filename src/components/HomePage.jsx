@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom';
 
 const HomePage = ({indexPhotoList}) => {
     return (
-        <Row style={{margin: '1vh 0 10vh 12vh'}}>
+        <Row style={{marginTop: '3vh',alignItems:'center',justifyContent:'center',display:'flex'}}>
             {indexPhotoList.map((item, i) => (
                 item.photoList.length >= 7 ?
                     <div style={{height: "390px", float: "left"}}>

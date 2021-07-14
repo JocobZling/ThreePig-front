@@ -23,6 +23,7 @@ const Wrap = styled('div')`
     height:203px;
     margin:7px 20px 0 20px;
  }
+ 
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -51,8 +52,8 @@ const Wrap = styled('div')`
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
   object-fit: cover;
+  height:200px;
 }
 
 .swiper-container {
@@ -106,21 +107,24 @@ const TimesViewer = ({everyTime}) => {
     return (
         <Wrap>
             <img className="wrapImg" src={History}/>
-            <Swiper onSwiper={setSwiperRef} slidesPerView={6} centeredSlides={false} spaceBetween={20} pagination={{
-                "type": "fraction"
-            }} navigation={true} className="mySwiper">
+            <Swiper onSwiper={setSwiperRef} slidesPerView={6} grabCursor={true} centeredSlides={false} spaceBetween={20}
+                    pagination={{
+                        "type": "fraction"
+                    }} navigation={true} className="mySwiper">
                 {everyTime.map((item, i) => (
+
                     <SwiperSlide key={i}>
-                        <Link to={`/highlight/EveryTime/${item.date}`} style={{display:'flex'}}>
-                            <img src={item.src} alt={'error'} />
+                        <Link to={`/highlight/EveryTime/${item.date}`}>
+                            <img src={item.src} alt={'error'}/>
+                            <div className={'day_date_1'}>
+                                {item.date.split('-')[1]}月{item.date.split('-')[2]}日
+                            </div>
+                            <div className={'day_date_2'}>
+                                {item.date.split('-')[0]}年
+                            </div>
                         </Link>
-                        <div className={'day_date_1'}>
-                            {item.date.split('-')[1]}月{item.date.split('-')[2]}日
-                        </div>
-                        <div className={'day_date_2'}>
-                            {item.date.split('-')[0]}年
-                        </div>
                     </SwiperSlide>
+
                 ))}
             </Swiper>
         </Wrap>

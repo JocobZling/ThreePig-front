@@ -76,7 +76,7 @@ const HighlightDetail = ({highlightDetail}) => (
         <Back back={'/highlight'}/>
         <Swiper effect="fade" spaceBetween={30} centeredSlides={true} autoplay={{
             "delay": 10000,
-            "disableOnInteraction": false,
+            "disableOnInteraction": true,
         }} navigation={false} className="mySwiper">
             {highlightDetail.map((item, i) => (
                 <SwiperSlide>

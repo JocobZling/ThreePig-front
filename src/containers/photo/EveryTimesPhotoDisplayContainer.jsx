@@ -11,7 +11,7 @@ const EveryTimesPhotoDisplayContainer = ({photos, getEveryTimesAllPhoto, match})
     return (
         <>
             <Back back={'/'}/>
-            <AllPhoto photos={photos} getEveryTimesAllPhoto={getEveryTimesAllPhoto}/>
+            <AllPhoto photos={photos} getEveryTimesAllPhoto={getEveryTimesAllPhoto} rowHeight={250}/>
         </>
     )
 }

@@ -1,0 +1,110 @@
+/*@keyframes scaleDraw {*/
+/*    !*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*!*/
+/*    0% {*/
+/*    }*/
+/*    25% {*/
+/*        transform: translate(-20px, -20px);*/
+/*    }*/
+/*    50% {*/
+/*        transform: translate(20px, 15px);*/
+/*    }*/
+/*    75% {*/
+/*        transform: translate(20px, 20px);*/
+/*    }*/
+/*    100% {*/
+/*    }*/
+/*}*/
+
+.backImageStyle {
+    position: absolute;
+    right: 10px;
+    top: 90px;
+    -webkit-animation-name: zy;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.backImageStyle img {
+    width: 80px;
+}
+
+/*@-webkit-keyframes zy {*/
+/*    10% {*/
+/*        transform: rotate(15deg);*/
+/*    }*/
+/*    20% {*/
+/*        transform: rotate(-10deg);*/
+/*    }*/
+/*    30% {*/
+/*        transform: rotate(5deg);*/
+/*    }*/
+/*    40% {*/
+/*        transform: rotate(-5deg);*/
+/*    }*/
+/*    50%, 100% {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+/*}*/
+
+/*@-moz-keyframes zy {*/
+/*    10% {*/
+/*        transform: rotate(15deg);*/
+/*    }*/
+/*    20% {*/
+/*        transform: rotate(-10deg);*/
+/*    }*/
+/*    30% {*/
+/*        transform: rotate(5deg);*/
+/*    }*/
+/*    40% {*/
+/*        transform: rotate(-5deg);*/
+/*    }*/
+/*    50%, 100% {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+/*}*/
+
+/*@-o-keyframes zy {*/
+/*    10% {*/
+/*        transform: rotate(15deg);*/
+/*    }*/
+/*    20% {*/
+/*        transform: rotate(-10deg);*/
+/*    }*/
+/*    30% {*/
+/*        transform: rotate(5deg);*/
+/*    }*/
+/*    40% {*/
+/*        transform: rotate(-5deg);*/
+/*    }*/
+/*    50%, 100% {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+/*}*/
+
+@keyframes zy {
+    10% {
+        transform: rotate(15deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(5deg);
+    }
+    40% {
+        transform: rotate(-5deg);
+    }
+    50%, 100% {
+        transform: rotate(0deg);
+    }
+}
+
+/*.backImageStyle {*/
+/*    position: absolute;*/
+/*    right: 10px;*/
+/*    top: 80px;*/
+/*}*/
+

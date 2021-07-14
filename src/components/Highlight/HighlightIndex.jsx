@@ -3,7 +3,6 @@ import TimesViewer from "./TimesViewer";
 import HighlightContent from "./Content";
 
 const HighlightIndex = ({highlightIndexPhoto}) => {
-    console.log(highlightIndexPhoto)
     return (
         highlightIndexPhoto !== undefined ?
             <div>

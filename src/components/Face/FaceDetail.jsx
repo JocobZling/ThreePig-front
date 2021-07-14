@@ -33,8 +33,8 @@ const FaceDetail = ({faceList, updateClusteringName, id}) => {
         setInputOpen(!inputOpen)
     }
     const Edit = (e) => {
-        console.log(e.value)
-        updateClusteringName(e, id)
+        updateClusteringName(e.target.value, id)
+        setInputOpen()
     }
     return (<div>
         <Back back={'/classification'}/>
@@ -42,10 +42,12 @@ const FaceDetail = ({faceList, updateClusteringName, id}) => {
             <Avatar size={80} src={faceList.facePosition}/>
             <AvatarFontWrap>
                 <div>{faceList.photoDisplayVoList.length}张</div>
-                <ClusteringName>{faceList.clusteringName !== null || inputOpen ? faceList.clusteringName : "Ta是谁 "}
+                <ClusteringName>
                     {inputOpen ? <Input placeholder="Ta是谁" bordered={false} style={{width: '65px'}}
-                                        onPressEnter={Edit}/> : ''}<EditOutlined
-                        onClick={EditOpen}/></ClusteringName>
+                                        onPressEnter={Edit}/> : <div>
+                        {faceList.clusteringName !== null ? faceList.clusteringName : "Ta是谁 "}
+                    </div>}
+                    <EditOutlined onClick={EditOpen}/></ClusteringName>
             </AvatarFontWrap>
         </AvatarWrap>
         <DetailWrap>

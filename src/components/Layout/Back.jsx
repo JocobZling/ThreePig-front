@@ -3,25 +3,21 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import BackImg from '../../images/cloud_back.png'
 import {Link} from 'react-router-dom';
+import '../../css/back.css'
 
 const BackImgStyle = styled('img')`
      width:80px;
-`
-const BackWrap = styled('div')`
-    position:absolute;
-    right:10px;
-    top:80px;
 `
 
 
 const Back = ({back}) => {
 
     return (
-        <BackWrap>
+        <div className={'backImageStyle'}>
             <Affix offsetTop={0} style={{right: '10px'}}>
-                <Link to={back}><BackImgStyle src={BackImg}/></Link>
+                <Link to={back}><img src={BackImg}/></Link>
             </Affix>
-        </BackWrap>
+        </div>
 
     )
 }

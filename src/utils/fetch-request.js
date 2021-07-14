@@ -122,7 +122,7 @@ export const update = async (url, data) => {
                 token: getHeaderFromLocalStorage('jwt'),
                 sessionId: getHeaderFromLocalStorage('sessionId')
             }),
-            body: JSON.stringify(data)
+            body: data
         })
         if (!res.ok) {
             return errHandler(res)
